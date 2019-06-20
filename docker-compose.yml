@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+    analyzer:
+        image: iotanalyzerl1
+        ports:
+            - "8092:8080"
+        volumes:
+            - ./config:/tmp/config
+        network_mode: host
+        command: "analyzer1 application.json --server.port=8092"    
